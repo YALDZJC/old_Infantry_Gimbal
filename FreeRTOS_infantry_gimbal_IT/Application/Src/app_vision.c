@@ -24,7 +24,7 @@ float vision_yaw_k = 1;
 float vision_pitch_k = 1;
 
 
-//Ñ¡ÔñÖ±Ãé»¹ÊÇ·´·µÐ¡
+//Ñ¡ï¿½ï¿½Ö±ï¿½é»¹ï¿½Ç·ï¿½ï¿½ï¿½Ð¡
 enum vision_mode_enum
 {
 	armor = 0,
@@ -42,7 +42,7 @@ void vision_recive_task( void *pvParameters )
 	{
 		xQueueReceive( VisionMsgQueue, rx_buf, portMAX_DELAY );
 
-		/* Ö¡Í·ÅÐ¶Ï */
+		/* Ö¡Í·ï¿½Ð¶ï¿½ */
 		if (rx_buf[0] == 0x5B && rx_buf[vision_receive_data_size - 1] == 0x5D)
 		{
 			send_tar_flag = 1;
@@ -50,9 +50,9 @@ void vision_recive_task( void *pvParameters )
 			armor_yaw = (int16_t)((rx_buf[6] - 48) * 1000) + (int16_t)((rx_buf[7] - 48) * 100) + (int16_t)((rx_buf[8] - 48) * 10) + (int16_t)(rx_buf[9] - 48);
 			robot_pitch = (int16_t)((rx_buf[11] - 48) * 1000) + (int16_t)((rx_buf[12] - 48) * 100) + (int16_t)((rx_buf[13] - 48) * 10) + (int16_t)(rx_buf[14] - 48);
 			robot_yaw = (int16_t)((rx_buf[16] - 48) * 1000) + (int16_t)((rx_buf[17] - 48) * 100) + (int16_t)((rx_buf[18] - 48) * 10) + (int16_t)(rx_buf[19] - 48);
-			/* ÊÓ¾õÊ¶±ðÎ» */
+			/* ï¿½Ó¾ï¿½Ê¶ï¿½ï¿½Î» */
 			vision_ready = 1;
-			/* ÊÓ¾õ¿ª»ðÎ» */
+			/* ï¿½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½Î» */
 			vision_fire_flag = rx_buf[21] - 48;
 			
 			if (vision_mode == armor)
@@ -152,16 +152,16 @@ void vision_send_task( void *pvParameters )
 //	{
 //		xQueueReceive( VisionMsgQueue, rx_buf, portMAX_DELAY );
 
-//		/* Ö¡Í·ÅÐ¶Ï */
+//		/* Ö¡Í·ï¿½Ð¶ï¿½ */
 //		if( rx_buf[0] == 0x39 || rx_buf[1] == 0x39 )
 //		{
-//			/* pitchÖá¾ø¶ÔÎ»ÖÃ */
+//			/* pitchï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿? */
 //			vision_struct.vision_pitch_increment_angle = rx_buf[2] << 8 | rx_buf[3];
-//			/* yawÖá¾ø¶ÔÎ»ÖÃ */
+//			/* yawï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿? */
 //			vision_struct.vision_yaw_increment_angle = rx_buf[4] << 24 | rx_buf[5] << 16 | rx_buf[6] << 8 | rx_buf[7];
-//			/* ÊÓ¾õÊ¶±ðÎ» */
+//			/* ï¿½Ó¾ï¿½Ê¶ï¿½ï¿½Î» */
 //			vision_ready = rx_buf[8];
-//			/* ÊÓ¾õ¿ª»ðÎ» */
+//			/* ï¿½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½Î» */
 //			vision_fire = rx_buf[9];
 //			
 //			if( (vision_enable == 1/*||windmill_enable ==1*/) && vision_ready == 1 )
