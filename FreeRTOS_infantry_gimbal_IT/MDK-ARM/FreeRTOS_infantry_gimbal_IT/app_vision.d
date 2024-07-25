@@ -1,11 +1,11 @@
 freertos_infantry_gimbal_it\app_vision.o: ..\Application\Src\app_vision.c
 freertos_infantry_gimbal_it\app_vision.o: ..\Application\Inc\includes.h
-freertos_infantry_gimbal_it\app_vision.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\app_vision.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-freertos_infantry_gimbal_it\app_vision.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+freertos_infantry_gimbal_it\app_vision.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\app_vision.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\app_vision.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 freertos_infantry_gimbal_it\app_vision.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\app_vision.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\app_vision.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\app_vision.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\app_vision.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\app_vision.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\app_vision.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\app_vision.o: ..\FreeRTOS\include\portable.h

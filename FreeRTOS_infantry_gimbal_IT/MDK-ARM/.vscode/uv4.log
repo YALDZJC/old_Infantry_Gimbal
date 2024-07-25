@@ -1,0 +1,17 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\Keil5\ARM\ARMCC\Bin'
+Build target 'FreeRTOS_infantry_gimbal_IT'
+compiling app_vision.c...
+..\Application\Src\app_vision.c(69): warning:  #550-D: variable "pitch_angle"  was set but never used
+  	int16_t pitch_angle = 0;
+..\Application\Src\app_vision.c: 1 warning, 0 errors
+compiling gimbal.c...
+..\Application\Src\gimbal.c(354): warning:  #186-D: pointless comparison of unsigned integer with zero
+  					if(shoot_flag >= 0 && shoot_flag < 1000)
+..\Application\Src\gimbal.c(442): warning:  #186-D: pointless comparison of unsigned integer with zero
+  					if(shoot_flag >= 0 && shoot_flag < 1000)
+..\Application\Src\gimbal.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=25772 RO-data=472 RW-data=480 ZI-data=79104  
+FromELF: creating hex file...
+"FreeRTOS_infantry_gimbal_IT\FreeRTOS_infantry_gimbal_IT.axf" - 0 Error(s), 3 Warning(s).
+Build Time Elapsed:  00:00:02
