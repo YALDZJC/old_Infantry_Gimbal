@@ -1,0 +1,16 @@
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\tasks.c
+freertos_infantry_gimbal_it\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\FreeRTOS.h
+freertos_infantry_gimbal_it\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\FreeRTOSConfig.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\projdefs.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\portable.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\deprecated_definitions.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\mpu_wrappers.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\task.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\list.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\timers.h
+freertos_infantry_gimbal_it\tasks.o: ..\FreeRTOS\include\stack_macros.h
