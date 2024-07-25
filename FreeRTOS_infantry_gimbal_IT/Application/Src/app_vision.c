@@ -3,6 +3,26 @@
 
 uint8_t bullet_speed = 10;
 uint8_t rx_buf[vision_receive_data_size];
+uint8_t vision_is_fire = 0;
+uint8_t vision_fire_flag;
+
+uint32_t vision_fire_hz = 0;
+uint8_t vision_fire_hz_flag = 0;
+uint32_t vision_fire_time_pre = 0;
+uint32_t vision_fire_count = 0;
+uint32_t vision_fire_count_pre = 0;
+
+int16_t robot_yaw = 0;
+int16_t robot_pitch = 0;
+
+int16_t armor_yaw = 0;
+int16_t armor_pitch = 0;
+
+uint8_t send_tar_flag = 0;
+
+float vision_yaw_k = 1;
+float vision_pitch_k = 1;
+
 
 //选择直瞄还是反返小
 enum vision_mode_enum
@@ -25,36 +45,62 @@ void vision_recive_task( void *pvParameters )
 		/* 帧头判断 */
 		if (rx_buf[0] == 0x5B && rx_buf[vision_receive_data_size - 1] == 0x5D)
 		{
-			vision_struct.armor_pitch = (int16_t)((rx_buf[1] - 48) * 1000) + (int16_t)((rx_buf[2] - 48) * 100) + (int16_t)((rx_buf[3] - 48) * 10) + (int16_t)(rx_buf[4] - 48);
-			vision_struct.armor_yaw = (int16_t)((rx_buf[6] - 48) * 1000) + (int16_t)((rx_buf[7] - 48) * 100) + (int16_t)((rx_buf[8] - 48) * 10) + (int16_t)(rx_buf[9] - 48);
-			vision_struct.robot_pitch = (int16_t)((rx_buf[11] - 48) * 1000) + (int16_t)((rx_buf[12] - 48) * 100) + (int16_t)((rx_buf[13] - 48) * 10) + (int16_t)(rx_buf[14] - 48);
-			vision_struct.robot_yaw = (int16_t)((rx_buf[16] - 48) * 1000) + (int16_t)((rx_buf[17] - 48) * 100) + (int16_t)((rx_buf[18] - 48) * 10) + (int16_t)(rx_buf[19] - 48);
+			send_tar_flag = 1;
+			armor_pitch = (int16_t)((rx_buf[1] - 48) * 1000) + (int16_t)((rx_buf[2] - 48) * 100) + (int16_t)((rx_buf[3] - 48) * 10) + (int16_t)(rx_buf[4] - 48);
+			armor_yaw = (int16_t)((rx_buf[6] - 48) * 1000) + (int16_t)((rx_buf[7] - 48) * 100) + (int16_t)((rx_buf[8] - 48) * 10) + (int16_t)(rx_buf[9] - 48);
+			robot_pitch = (int16_t)((rx_buf[11] - 48) * 1000) + (int16_t)((rx_buf[12] - 48) * 100) + (int16_t)((rx_buf[13] - 48) * 10) + (int16_t)(rx_buf[14] - 48);
+			robot_yaw = (int16_t)((rx_buf[16] - 48) * 1000) + (int16_t)((rx_buf[17] - 48) * 100) + (int16_t)((rx_buf[18] - 48) * 10) + (int16_t)(rx_buf[19] - 48);
 			/* 视觉识别位 */
 			vision_ready = 1;
 			/* 视觉开火位 */
-//			vision_fire = rx_buf[21] - 48;
+			vision_fire_flag = rx_buf[21] - 48;
 			
-			if( (vision_enable == 1/*||windmill_enable ==1*/) && vision_ready == 1 )
+			if (vision_mode == armor)
 			{
-				if (vision_mode == armor)
-				{
-				vision_struct.vision_pitch_increment_angle = vision_struct.armor_pitch;
-				vision_struct.vision_yaw_increment_angle = vision_struct.armor_yaw;
-				}
-				
-				if (vision_mode == robot)
-				{
-				vision_struct.vision_pitch_increment_angle = vision_struct.robot_pitch;
-				vision_struct.vision_yaw_increment_angle = vision_struct.robot_yaw;
+				vision_struct.vision_pitch_increment_angle = (float)((armor_pitch - 1000) / 10);
+				vision_struct.vision_yaw_increment_angle = (float)((armor_yaw - 1000) / 10);
+			}
+			
+			if (vision_mode == robot)
+			{
+				vision_struct.vision_pitch_increment_angle = (float)((robot_pitch - 1000) / 10) * vision_pitch_k;
+				vision_struct.vision_yaw_increment_angle = (float)((robot_yaw - 1000) / 10) * vision_yaw_k;
 
-//				vision_fire_flag = 0;
+				vision_fire_flag = 0;
+			}
+			
+			if( vision_enable == 1 && send_tar_flag == 1 )
+			{
+				yaw_target = -vision_struct.vision_yaw_increment_angle + CH110_data.yaw;
+				pitch_target = -vision_struct.vision_pitch_increment_angle + CH110_data.pitch;
+			}
+			
+			if (vision_fire_flag == 1)
+			{
+				vision_is_fire = 1;
+				vision_fire_count++;
+
+				if (vision_fire_hz_flag == 0)
+				{
+					vision_fire_time_pre = xTaskGetTickCount();
+					vision_fire_count_pre = vision_fire_count;
+					vision_fire_hz_flag = 1;
 				}
-				
-				yaw_target = vision_struct.vision_pitch_increment_angle;
-				pitch_target = vision_struct.vision_yaw_increment_angle;
+
+				if (xTaskGetTickCount() - vision_fire_time_pre >= 5000)
+				{
+					vision_fire_hz_flag = 0;
+					vision_fire_hz = vision_fire_count - vision_fire_count_pre;
+				}
+			}
+			else
+			{
+				vision_is_fire = 0;
 			}
 			
 		}
+		send_tar_flag = 0;
+		vTaskDelay( pdMS_TO_TICKS( 5 ) );
 	}
 }
 
@@ -76,15 +122,14 @@ void vision_send_task( void *pvParameters )
 			HAL_UARTEx_ReceiveToIdle_IT( &vision_uart, vision_rx_buf, vision_receive_data_size );
 		}
 		
-		#ifndef infantry_2
-		pitch_angle = motor_info_list[1]->angle_change_sum;
-		#else
-		pitch_angle = motor_info_list[0]->angle_change_sum;
-		#endif
-		yaw_angle = yaw_cumulative_change_angle * 22.755555f;
+//		#ifndef infantry_2
+//		pitch_angle = motor_info_list[1]->angle_change_sum;
+//		#else
+//		pitch_angle = motor_info_list[0]->angle_change_sum;
+//		#endif
+//		yaw_angle = yaw_cumulative_change_angle * 22.755555f;
 		
 		yaw_angle = (int16_t)(CH110_data.yaw * 10.0f);
-		yaw_angle = yaw_angle + 1800;
 
 		vision_send_buf[0] = 0xFF;
 		vision_send_buf[1] = yaw_angle >> 8;

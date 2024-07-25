@@ -53,7 +53,6 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 	else if( huart->Instance == vision_uart.Instance )
 	{
 		xQueueSendFromISR( VisionMsgQueue, vision_rx_buf, &xHigherPriorityTaskWoken );
-		
 		HAL_UARTEx_ReceiveToIdle_IT( &vision_uart, vision_rx_buf, vision_receive_data_size );
 	}
 	
