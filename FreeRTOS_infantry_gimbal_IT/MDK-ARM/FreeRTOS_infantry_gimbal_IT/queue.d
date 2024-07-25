@@ -1,9 +1,9 @@
 freertos_infantry_gimbal_it\queue.o: ..\FreeRTOS\queue.c
-freertos_infantry_gimbal_it\queue.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\queue.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\queue.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\queue.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 freertos_infantry_gimbal_it\queue.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\queue.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\queue.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\queue.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\queue.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\queue.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\queue.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\queue.o: ..\FreeRTOS\include\portable.h

@@ -55,9 +55,7 @@ uint16_t servo_angle = 420;
 
 uint8_t C_latch_flag;
 uint8_t V_latch_flag;
-uint8_t G_latch_flag;
 uint8_t press_V_lock;
-
 
 int16_t b;
 /* 云台旋转速度控制比例 */
@@ -87,13 +85,6 @@ uint8_t cover_flag;
 
 /* 视觉控制标识符 */
 uint8_t vision_control_flag;
-
-enum vision_mode_enum
-{
-	armor = 0,
-	robot = 1,
-};
-extern uint8_t vision_mode;
 
 /* 云台控制任务 */
 void gimbal_task( void *pvParameters )
@@ -325,22 +316,6 @@ void gimbal_task( void *pvParameters )
 					temp_shoot_flag = 1;
 					b=1;
 				}
-				//新添加的视觉标识符，选择反小与直瞄
-				if( RecMsg.KeyBoard.key.G_key  && G_latch_flag == 0)
-				{
-					vision_mode = robot;
-					if (RecMsg.KeyBoard.key.SHIFT_key == 1)
-					{
-						vision_mode = armor;
-					}
-					G_latch_flag = 1;
-
-				}
-				else if (!RecMsg.KeyBoard.key.G_key)
-				{
-					G_latch_flag = 0;
-				}
-
 				if(RecMsg.KeyBoard.key.B_key)
 				{
 					speed_value_0x202 = 0;
@@ -349,7 +324,6 @@ void gimbal_task( void *pvParameters )
 					temp_shoot_flag = 0;
 					b=0;
 				}
-
 				if(temp_shoot_flag) {
 					if(shoot_flag >= 0 && shoot_flag < 1000)
 					{

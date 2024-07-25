@@ -1,7 +1,7 @@
 freertos_infantry_gimbal_it\croutine.o: ..\FreeRTOS\croutine.c
 freertos_infantry_gimbal_it\croutine.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\croutine.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\croutine.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\croutine.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\croutine.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\croutine.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\croutine.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\croutine.o: ..\FreeRTOS\include\portable.h

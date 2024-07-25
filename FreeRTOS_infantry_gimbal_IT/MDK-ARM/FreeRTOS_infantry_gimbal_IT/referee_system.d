@@ -1,11 +1,11 @@
 freertos_infantry_gimbal_it\referee_system.o: ..\Application\Src\referee_system.c
 freertos_infantry_gimbal_it\referee_system.o: ..\Application\Inc\includes.h
-freertos_infantry_gimbal_it\referee_system.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\referee_system.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-freertos_infantry_gimbal_it\referee_system.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+freertos_infantry_gimbal_it\referee_system.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\referee_system.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\referee_system.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 freertos_infantry_gimbal_it\referee_system.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\referee_system.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\referee_system.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\referee_system.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\referee_system.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\referee_system.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\referee_system.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\referee_system.o: ..\FreeRTOS\include\portable.h

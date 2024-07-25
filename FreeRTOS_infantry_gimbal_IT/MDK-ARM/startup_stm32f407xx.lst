@@ -835,12 +835,11 @@ ARM Macro Assembler    Page 13
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=freertos_infantry_gimbal_it\startup_stm32f407xx.d -ofreertos
 _infantry_gimbal_it\startup_stm32f407xx.o -I.\RTE\_FreeRTOS_infantry_gimbal_IT 
--IC:\Users\Administrator.DESKTOP-IAACAVF\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.
-0\CMSIS\Core\Include -IC:\Users\Administrator.DESKTOP-IAACAVF\AppData\Local\Arm
-\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include --pr
-edefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 532" --predefin
-e="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --predefine="_RTE_ SETA 1" --
-list=startup_stm32f407xx.lst startup_stm32f407xx.s
+-ID:\Keil5\ARM\CMSIS\5.7.0\CMSIS\Core\Include -ID:\Keil5\Keil\STM32F4xx_DFP\2.1
+7.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__MICROLIB SETA 1" -
+-predefine="__UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine=
+"STM32F407xx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f407xx.lst 
+startup_stm32f407xx.s
 
 
 
