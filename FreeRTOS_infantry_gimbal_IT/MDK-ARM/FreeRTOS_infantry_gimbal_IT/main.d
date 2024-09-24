@@ -7,7 +7,7 @@ freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4x
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Include/core_cm4.h
-freertos_infantry_gimbal_it\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-freertos_infantry_gimbal_it\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 freertos_infantry_gimbal_it\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -38,9 +38,9 @@ freertos_infantry_gimbal_it\main.o: ../Core/Inc/tim.h
 freertos_infantry_gimbal_it\main.o: ../Core/Inc/usart.h
 freertos_infantry_gimbal_it\main.o: ../Core/Inc/gpio.h
 freertos_infantry_gimbal_it\main.o: ..\Application\Inc\includes.h
-freertos_infantry_gimbal_it\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-freertos_infantry_gimbal_it\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+freertos_infantry_gimbal_it\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 freertos_infantry_gimbal_it\main.o: ..\FreeRTOS\include\FreeRTOS.h
 freertos_infantry_gimbal_it\main.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\main.o: ..\FreeRTOS\include\projdefs.h

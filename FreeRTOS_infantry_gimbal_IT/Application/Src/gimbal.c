@@ -133,7 +133,7 @@ void gimbal_task( void *pvParameters )
 			first_flag = 0;
 		}
 		/* 运行状态 */
-		else if( switch_flag == 1 )
+		else if( switch_flag == 0 )
 		{
 			/* 第一次运行清除陀螺仪和电机的累计角度 */
 			if( first_flag == false )
