@@ -29,7 +29,7 @@
 
 //#define SHOOT_HEAT_DEAD_BAND 10
 
-//#define enable_angle_sum_clac_0x201
+#define enable_angle_sum_clac_0x201
 //#define enable_angle_sum_clac_0x202
 //#define enable_angle_sum_clac_0x203
 //#define enable_angle_sum_clac_0x204

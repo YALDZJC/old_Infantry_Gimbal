@@ -1,11 +1,11 @@
 freertos_infantry_gimbal_it\app_motor.o: ..\Application\Src\app_motor.c
 freertos_infantry_gimbal_it\app_motor.o: ..\Application\Inc\includes.h
-freertos_infantry_gimbal_it\app_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\app_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-freertos_infantry_gimbal_it\app_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+freertos_infantry_gimbal_it\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 freertos_infantry_gimbal_it\app_motor.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\app_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\app_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\app_motor.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\app_motor.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\app_motor.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\app_motor.o: ..\FreeRTOS\include\portable.h

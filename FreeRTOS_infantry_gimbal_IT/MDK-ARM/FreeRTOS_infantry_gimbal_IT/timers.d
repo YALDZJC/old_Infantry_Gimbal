@@ -1,8 +1,8 @@
 freertos_infantry_gimbal_it\timers.o: ..\FreeRTOS\timers.c
-freertos_infantry_gimbal_it\timers.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\timers.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 freertos_infantry_gimbal_it\timers.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\timers.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\timers.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\timers.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\timers.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\timers.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\timers.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\timers.o: ..\FreeRTOS\include\portable.h

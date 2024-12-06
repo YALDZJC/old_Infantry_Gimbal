@@ -1,11 +1,11 @@
 freertos_infantry_gimbal_it\freertos_about.o: ..\Application\Src\freertos_about.c
 freertos_infantry_gimbal_it\freertos_about.o: ..\Application\Inc\includes.h
-freertos_infantry_gimbal_it\freertos_about.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-freertos_infantry_gimbal_it\freertos_about.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-freertos_infantry_gimbal_it\freertos_about.o: D:\Keil5\ARM\ARMCC\Bin\..\include\math.h
+freertos_infantry_gimbal_it\freertos_about.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+freertos_infantry_gimbal_it\freertos_about.o: E:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+freertos_infantry_gimbal_it\freertos_about.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 freertos_infantry_gimbal_it\freertos_about.o: ..\FreeRTOS\include\FreeRTOS.h
-freertos_infantry_gimbal_it\freertos_about.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-freertos_infantry_gimbal_it\freertos_about.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+freertos_infantry_gimbal_it\freertos_about.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+freertos_infantry_gimbal_it\freertos_about.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 freertos_infantry_gimbal_it\freertos_about.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 freertos_infantry_gimbal_it\freertos_about.o: ..\FreeRTOS\include\projdefs.h
 freertos_infantry_gimbal_it\freertos_about.o: ..\FreeRTOS\include\portable.h

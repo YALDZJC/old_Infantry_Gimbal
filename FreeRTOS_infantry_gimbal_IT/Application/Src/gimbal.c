@@ -49,6 +49,7 @@ uint8_t SHOOT_HEAT_DEAD_BAND = 30;
 
 uint8_t first_flag;
 uint16_t shoot_flag;
+uint8_t G_latch_flag;
 uint8_t temp_shoot_flag;
 
 uint16_t servo_angle = 420;
@@ -85,6 +86,14 @@ uint8_t cover_flag;
 
 /* 视觉控制标识符 */
 uint8_t vision_control_flag;
+extern uint8_t vision_is_fire;
+enum vision_mode_enum
+{
+	armor = 0,
+	robot = 1,
+};
+extern uint8_t vision_mode;
+
 
 /* 云台控制任务 */
 void gimbal_task( void *pvParameters )
@@ -124,7 +133,7 @@ void gimbal_task( void *pvParameters )
 			first_flag = 0;
 		}
 		/* 运行状态 */
-		else if( switch_flag == 1 )
+		else if( switch_flag == 0 )
 		{
 			/* 第一次运行清除陀螺仪和电机的累计角度 */
 			if( first_flag == false )
@@ -273,22 +282,36 @@ void gimbal_task( void *pvParameters )
 				
 			
 				/* 视觉启动 */
-				if( RecMsg.mouse.press_right)
+				if (RecMsg.mouse.press_right || RecMsg.remote.ch3 >= 1670)
 				{
 					vision_enable = 1;
-					if(vision_enable == 1&&windmill_enable)
-					{
-					if(vision_fire==0x11)
-					{
-						temp_shoot_flag = 1;
-						speed_value_0x201 = -2200;
-					}
-					}
 				}
 				else
 				{
 					vision_enable = 0;
 				}
+				
+				if (vision_enable == 0)
+				{
+					vision_is_fire = 0;
+				}
+				
+//				if( RecMsg.mouse.press_right)
+//				{
+//					vision_enable = 1;
+//					if(vision_enable == 1&&windmill_enable)
+//					{
+//					if(vision_fire==0x11)
+//					{
+//						temp_shoot_flag = 1;
+//						speed_value_0x201 = -2200;
+//					}
+//					}
+//				}
+//				else
+//				{
+//					vision_enable = 0;
+//				}
 				if( RecMsg.KeyBoard.key.C_key )
 				{
 					windmill_enable=1;
@@ -316,6 +339,23 @@ void gimbal_task( void *pvParameters )
 					temp_shoot_flag = 1;
 					b=1;
 				}
+				
+				//新添加的视觉标识符，选择反小与直瞄
+				if( RecMsg.KeyBoard.key.G_key  && G_latch_flag == 0)
+				{
+					vision_mode = robot;
+					if (RecMsg.KeyBoard.key.SHIFT_key == 1)
+					{
+						vision_mode = armor;
+					}
+					G_latch_flag = 1;
+
+				}
+				else if (!RecMsg.KeyBoard.key.G_key)
+				{
+					G_latch_flag = 0;
+				}
+				
 				if(RecMsg.KeyBoard.key.B_key)
 				{
 					speed_value_0x202 = 0;
